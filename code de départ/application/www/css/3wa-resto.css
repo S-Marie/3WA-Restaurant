@@ -1,0 +1,170 @@
+/**** GENERAL ****/
+
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0 auto;
+	font-family: "Karla";
+	font-size: 1.1rem;
+	background-color: #F6EBE2;
+}
+
+
+/**** HEADER ****/
+
+
+header{
+	border-top: 20px solid #847182;
+	padding: 2rem 0;
+}
+
+
+
+h1{
+	text-align: center;
+}
+
+h1>a{
+	text-decoration: none;
+	font-family: "Oleo Script Swash Caps";
+	color: #847182;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+
+
+/**** INTERFACE UTILISATEUR ****/
+
+
+.user-interface{
+	margin: 2rem 0;
+}
+
+.user-interface > .link-list{
+	list-style-type: none;
+	display: flex;
+	justify-content: space-around;
+}
+.link-list li a{
+	text-decoration: none;
+}
+
+.button{
+	background-color: #847182;
+	border: none;
+	border: 1px solid #847182;
+	border-radius: 2rem;
+	color: #F6EBE2;
+	padding: 1rem;
+}
+
+.button:hover{
+	background-color: #8B6A77;
+	box-shadow: 5px 5px 10px #FBD1CF;
+}
+
+.button-cancel{
+	background-color: #BDCFD9;
+	border: none;
+	border: 1px solid #BDCFD9;
+	color: #F6EBE2;
+	padding: 0.5rem;
+}
+
+/**** LISTE ALIMENTS - HOMEVIEW ****/
+
+
+main{
+	margin: 0 2rem;
+}
+
+.meal-list{
+	text-align: center;
+	margin: 3rem 0;
+}
+
+/**** FORMULAIRE INSCRIPTION ****/
+
+h2{
+	color: #847182;
+    font-family: 'Lobster', cursive;
+    font-size: 2em;
+}
+
+fieldset{
+	border: 2px solid #FBD1CF;
+	border-radius: 5px;
+	box-shadow: 2px 2px 10px #FBD1CF;
+}
+
+legend, span{
+	color: #847182;
+    font-family: 'Lobster Two', cursive;
+    font-size: 1.5em;
+    padding: 1rem;
+}
+/**** TABLE FORM ORDER ****/
+
+#orderArticle, #orderdetails {
+	text-align: center;
+}
+
+/*** PAYMENT ***/
+
+#profileDetails{
+	margin-left: 27rem;
+    width: 350px;
+	border: 2px solid #847182;
+	border-radius: 5px;
+	box-shadow: 2px 2px 10px #847182;
+	padding: 0 5rem;
+}
+
+#paymentDetails {
+	text-align: center;
+}
+
+#paymentDetails .number{
+	text-align: left;
+}
+
+#paymentDetails>thead>tr:nth-child(1){
+	font-weight: bold;
+}
+
+#ttc, .ttc {
+	background-color: #847182;
+	color: #fff;
+}
+
+#validCommande{
+
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+#warning{
+	color: #ff0000;
+}
+
+/**** FOOTER ****/
+
+
+footer{
+	text-align: center;
+}
+
+footer>.link-list{
+	list-style-type: none;
+	display: flex;
+	justify-content: center;
+}
+
+.fa-heart{
+	color: red;
+}

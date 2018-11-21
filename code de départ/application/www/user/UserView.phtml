@@ -1,0 +1,53 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+<!-- affichage du formulaire -->
+<h2>Création d'un compte client</h2>
+<form method="POST" action="<?= $requestUrl ?>/user">
+<p>Hello</p>
+<fieldset><legend>Identité et coordonnées</legend>
+
+	<p><label>Nom :</label> <input type="text" name="lastName" id="lastName"/></p>
+	<p><label>Prénom :</label> <input type="text" name="firstName" id="firstName"/></p>
+	<p><label>Date de naissance :</label> <select id="birthDay" name="birthDay">
+					<?php for($day = 1; $day <= 31; $day++): ?>
+						<option value="<?= $day ?>"><?= $day ?></option>
+					<?php endfor; ?>
+				</select>
+				<span> / </span>
+				<select name="birthMonth">
+					<option value="1">Janvier</option>
+					<option value="2">Février</option>
+					<option value="3">Mars</option>
+					<option value="4">Avril</option>
+					<option value="5">Mai</option>
+					<option value="6">Juin</option>
+					<option value="7">Juillet</option>
+					<option value="8">Août</option>
+					<option value="9">Septembre</option>
+					<option value="10">Octobre</option>
+					<option value="11">Novembre</option>
+					<option value="12">Décembre</option>
+				</select>
+				<span> / </span>
+				<select name="birthYear">
+	                <?php for($year = 1940; $year <= date('Y') - 18; $year++): ?>
+	                    <option value="<?= $year; ?>"><?= $year; ?></option>
+	                <?php endfor; ?>
+				</select></p>
+	<p><label>Adresse :</label> <textarea name="address" id="address"></textarea></p>
+	<p><label>Ville :</label> <input type="text" name="city" id="city"/></p>
+	<p><label>Code postal :</label> <input type="text" name="zipCode" id="zipCode"/></p>
+	<p><label>Téléphone :</label> <input type="tel" name="phone" id="phone"/></p>
+</fieldset>
+
+<fieldset><legend>Informations d'authenfication</legend>
+
+	<p><label>E-mail :</label> <input type="text" name="email" id="email" placeholder="email@mail.com"/></p>
+	<p><label>Mot de passe :</label> <input type="password" name="password" id="password"/></p>
+	
+</fieldset>
+
+<p><input type="submit" class="button" value="Créer le compte" /> <a href="<?= $requestUrl ?>" class="button-cancel">Annuler</a></p>
+</form>

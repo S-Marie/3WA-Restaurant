@@ -1,0 +1,39 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+<!-- affichage du formulaire -->
+<h2>Passer une commande</h2>
+
+<form method="POST" action="<?= $requestUrl ?>/order">
+
+<fieldset><legend>Ajouter un article</legend>
+
+	<p><label>Nom :</label>
+		<select id="article" name="article">
+		<?php foreach($meals as $meal){?>
+			<option id="<?= $meal['Id'] ?>" value="<?= $meal['Id'] ?>"><?= $meal['Name'] ?></option>
+		<?php } ?>
+		</select>
+	</p>
+	<article id="orderArticle">
+		<img id="photo" src=""/>
+		<p id="description"></p>
+		<p><strong id="price"> </strong>€</p>
+	</article>
+
+	<p><label>Quantité :</label> 
+	<input id="quantity" name="quantity" />
+	</p>
+	<p><input type="submit" class="button" id="addArticle" value="Ajouter" /></p>
+</fieldset>
+
+<fieldset><legend>Récapitulatif de la commande</legend>
+	<p  id="orderDetails">
+		
+	</p>
+</fieldset>
+
+<p><a href="<?= $requestUrl ?>/order/payment" class="button" id="validCommand"> Valider la commande</a> <a href="<?= $requestUrl ?>" class="button-cancel">Annuler</a></p>
+</form>
+<script src="<?= $wwwUrl ?>/js/classes/OrderForm.class.js"></script> 

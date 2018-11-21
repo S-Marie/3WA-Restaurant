@@ -1,0 +1,61 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+<!-- affichage du formulaire -->
+<h2>Réservation d'une table</h2>
+
+<form method="POST" action="<?= $requestUrl ?>/booking">
+
+<fieldset><legend>Informations de réservation</legend>
+
+	<p><label>Date de réservation :</label>
+				<select id="bookingDay" name="bookingDay">
+					<?php for($day = 1; $day <= 31; $day++): ?>
+						<option value="<?= $day ?>"><?= $day ?></option>
+					<?php endfor; ?>
+				</select>
+				<span> / </span>
+				<select name="bookingMonth">
+					<option value="1">Janvier</option>
+					<option value="2">Février</option>
+					<option value="3">Mars</option>
+					<option value="4">Avril</option>
+					<option value="5">Mai</option>
+					<option value="6">Juin</option>
+					<option value="7">Juillet</option>
+					<option value="8">Août</option>
+					<option value="9">Septembre</option>
+					<option value="10">Octobre</option>
+					<option value="11">Novembre</option>
+					<option value="12">Décembre</option>
+				</select>
+				<span> / </span>
+				<select name="bookingYear">
+	                <?php for($year = 2018; $year <= date('Y'); $year++): ?>
+	                    <option value="<?= $year; ?>"><?= $year; ?></option>
+	                <?php endfor; ?>
+				</select>
+				<span> à </span>
+				<select name="bookingHours">
+	                <?php for($hours = 0; $hours <= 23; $hours++): ?>
+	                    <option value="<?= $hours; ?>"><?= $hours; ?></option>
+	                <?php endfor; ?>
+				</select> 
+				<span> : </span>
+				<select name="bookingMinutes">
+	                <?php for($minutes = 0; $minutes <= 59; $minutes++): ?>
+	                    <option value="<?= $minutes; ?>"><?= $minutes; ?></option>
+	                <?php endfor; ?>
+				</select></p>
+	<p><label>Nombre de Couverts :</label> 
+				<select name="bookingSeatNumber">
+	                <?php for($seatNumber = 1; $seatNumber <= 8; $seatNumber++): ?>
+	                    <option value="<?= $seatNumber; ?>"><?= $seatNumber; ?></option>
+	                <?php endfor; ?>
+				</select></p>
+	
+</fieldset>
+
+<p><input type="submit" class="button" value="Réserver" /> <a href="<?= $requestUrl ?>" class="button-cancel">Annuler</a></p>
+</form>

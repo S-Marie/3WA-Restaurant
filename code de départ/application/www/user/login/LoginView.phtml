@@ -1,0 +1,18 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+<!-- affichage du formulaire -->
+<h2>Se connecter avec un compte utilisateur</h2>
+
+<form method="POST" action="<?= $requestUrl ?>/user/login">
+
+<fieldset><legend>Informations d'authenfication</legend>
+
+	<p><label>E-mail :</label> <input type="text" name="email" id="email" placeholder="email@mail.com"/></p>
+	<p><label>Mot de passe :</label> <input type="password" name="password" id="password"/></p>
+	
+</fieldset>
+
+<p><input type="submit" class="button" value="Se Connecter" /> <a href="<?= $requestUrl ?>" class="button-cancel">Annuler</a></p>
+</form>

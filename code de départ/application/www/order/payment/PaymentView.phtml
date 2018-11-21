@@ -1,0 +1,53 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+<!-- affichage du formulaire -->
+<h2>Payer la commande</h2>
+
+<aside id="profileDetails">
+	
+		<p><?= $_SESSION['user']['LastName'] ?> <?= $_SESSION['user']['FirstName'] ?></p>
+		<p><?= $_SESSION['user']['Address'] ?></p>
+		<p><?= $_SESSION['user']['ZipCode'] ?> <?= $_SESSION['user']['City'] ?></p>
+
+</aside>
+
+
+<form><fieldset><legend>Récapitulatif de la commande n°<?= $orderId ?></legend>
+	<table id="paymentDetails" data-id="panier-" class="generic-table">
+	
+
+		<tfoot>
+			<tr>
+				<td colspan="3">Total HT</td>
+				<td id="ht"> €</td>
+			</tr>
+			<tr>
+				<td colspan="3">TVA ( %)</td>
+				<td>20 %</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="ttc">Total TTC</td>
+				<td id="ttc"> €</td>
+			</tr>
+			<tr class="small-notice">
+				<td colspan="3">Commandé le </td>
+			</tr>
+		</tfoot>
+
+	</table>	
+	
+</fieldset></form>
+<br />
+<hr>
+
+<form class="generic-form" action="<?= $requestUrl ?>/order/validate" method="POST">
+	<p><strong>Merci de bien vouloir procéder au paiement de la commande.</strong></p>
+	<p>
+		<input type="hidden" name="items" id="items" value="">
+		<input type="submit" class="button" id="validCommand" value="Enregistrer la commande"/>
+		<a href="<?= $requestUrl ?>" class="button-cancel" id="cancel">Annuler</a>
+	</p>
+</form>
+<script src="<?= $wwwUrl ?>/js/classes/PaymentForm.class.js"></script> 

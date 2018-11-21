@@ -1,0 +1,33 @@
+<h2><i class="fas fa-plus-square"></i> Ajout d'un produit au catalogue</h2>
+
+<form class="generic-form" method="POST" action="<?= $requestUrl ?>/admin/meal" enctype="multipart/form-data">
+
+<aside class="error-message hidden">
+        <h3><i class="fa fa-warning"></i> Il y a <span id="js-total-error-count">1</span> erreur(s) dans le formulaire !</h3>
+        <p></p>
+    </aside>
+
+<fieldset><legend><i class="fas fa-utensils"></i> Caractéristiques du produit</legend>
+
+	<p><label for="name">Nom :</label> <input type="text" name="productName" id="productName" data-required data-name="Nom"/></p>
+
+	<p><label for="description">Description :</label> <textarea name="description" id="description" rows="3"></textarea></p>
+	
+	<p><label for="photo">Photo :</label> <input type="file" name="productImage" id="productImage"/></p>
+
+	<p><i id="warning" class="fas fa-exclamation-triangle"></i><strong id="warning"> Merci de renommer le fichier de la photo avec le nom du plat avant de l'envoyer</strong></p>
+
+</fieldset>
+
+<fieldset><legend><i class="fas fa-money-bill-alt"></i> Approvisionnement</legend>
+
+	<p><label for="initialStock">Stock initial :</label> <input id="initialStock" class="quantity" type="text" maxlength="3" name="initialStock" data-name="Stock initial" data-type="positive-integer" data-required/></p>
+
+	<p><label for="buyPrice">Prix d'achat :</label> <input id="buyPrice" class="money" type="text" maxlength="5" name="buyPrice" data-name="Prix d'achat" data-required/>€</p>
+	
+	<p><label for="salePrice">Prix de vente :</label> <input id="salePrice" class="money" type="text" maxlength="5" name="salePrice" data-name="Prix de vente" data-required/>€</p>
+
+</fieldset>
+
+<p><input type="submit" class="button" value="Ajouter" /> <a href="<?= $requestUrl ?>" class="button-cancel">Annuler</a></p>
+</form>
